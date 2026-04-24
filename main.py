@@ -12,10 +12,10 @@ app = FastAPI(title="Vision Web Studio API")
 # Configuration CORS pour autoriser uniquement ton frontend Vercel à appeler cette API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://landing-page-vws.vercel.app/"], # Remplace par ton vrai domaine
-    allow_credentials=True,
-    allow_methods=["POST", "OPTIONS"],
-    allow_headers=["*"],
+    allow_origins=["*"], # L'étoile accepte TOUTES les URLs (Vercel principal, Vercel de test, Localhost)
+    allow_credentials=False, # DOIT IMPÉRATIVEMENT ÊTRE SUR "False" QUAND ON UTILISE "*"
+    allow_methods=["*"], # Accepte toutes les méthodes (POST, GET, OPTIONS, etc.)
+    allow_headers=["*"], # Accepte tous les headers
 )
 
 META_PIXEL_ID = os.getenv("META_PIXEL_ID")
