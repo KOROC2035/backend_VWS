@@ -42,7 +42,8 @@ async def track_whatsapp_click(
                     "client_user_agent": user_agent,
                 }
             }
-        ]
+        ],
+        "test_event_code": "TEST19882"
     }
 
     url = f"https://graph.facebook.com/v19.0/{META_PIXEL_ID}/events?access_token={META_ACCESS_TOKEN}"
